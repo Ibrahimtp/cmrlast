@@ -48,6 +48,15 @@ router.get("/edit/:qid", async(req, res)=> {
 
 
 router.get("/delete/:id", async(req, res)=> {
+
+
+  h = await questions.findById(req.params.id)
+
+
+  deleteTags = await tags.findById(h.tags._id).remove()
+
+
+
   tto = await questions.findOneAndDelete({
     _id: req.params.id
   }, (err)=> {
