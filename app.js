@@ -7,17 +7,16 @@ const mongoose = require("mongoose");
 const moment = require("moment");
 const escapeh = require("escape-html");
 require("dotenv").config();
+const ejsLint = require("ejs-lint");
 
 const sessions = require("express-session");
 const MongoStore = require("connect-mongo");
 
-const uri =
-  "mongodb+srv://Ibrahim:ib130860011@cmrtcforum.dj6tu.mongodb.net/cmrtcforum2?retryWrites=true&w=majority";
-
+const uri = process.env.DB_STRING;
 mongoose
-  .connect(/*'mongodb://localhost:27017/subcmr'*/ uri, {
+  .connect(uri, {
     useNewUrlParser: true,
-    // useFindAndModify: false,
+
     useUnifiedTopology: true,
   })
   .then(() => {
@@ -28,15 +27,16 @@ var indexRouter = require("./routes/index");
 var userp = require("./routes/userProfile");
 var AnswerRouter = require("./routes/newAnswer");
 var commentRouter = require("./routes/newComment");
-var questionRouter = require("./routes/newQuestion");
-var allquestionRouter = require("./routes/allquestions");
-var questiondetailRouter = require("./routes/questiondetail");
 var voteRouter = require("./routes/newVote");
 var signUpRouter = require("./routes/signup");
 var loginRouter = require("./routes/login");
 var tagRouter = require("./routes/tag");
 var downloadRouter = require("./routes/upload");
 var modifyRouter = require("./routes/modifyquestion");
+// var questionRouter = require("./routes/newQuestion");
+var allquestionRouter = require("./routes/allquestions");
+var questiondetailRouter = require("./routes/questiondetail");
+const question_router = require("./routes/question");
 
 var app = express();
 app.locals.moment = moment;
@@ -74,16 +74,17 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", userp);
 app.use("/newVote", voteRouter);
-app.use("/newQuestion", questionRouter);
+// app.use("/newQuestion", questionRouter);
 app.use("/allquestions", allquestionRouter);
 app.use("/questiondetail", questiondetailRouter);
+app.use("/modify", modifyRouter);
+app.use("/question", question_router);
 app.use("/newAnswer", AnswerRouter);
 app.use("/newComment", commentRouter);
 app.use("/signup", signUpRouter);
 app.use("/login", loginRouter);
 app.use("/upload", downloadRouter);
 app.use("/tags", tagRouter);
-app.use("/modify", modifyRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
