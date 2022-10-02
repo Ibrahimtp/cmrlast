@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const answers = require("./answer");
 
-
+ 
 const commentSchema = mongoose.Schema({
   answercommentedon: {
     type: mongoose.Schema.Types.ObjectId, ref: "answer"

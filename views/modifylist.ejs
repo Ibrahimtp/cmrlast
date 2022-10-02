@@ -70,7 +70,7 @@
     </div>
 
     <ul class="nav nav-pills nav-fill justify-content-between pt-4">
-      <a class="nav-link" href="/allquestions"> Questions</a>
+      <a class="nav-link" href="/question/allquestions"> Questions</a>
       <a class="nav-link" href="/tags"> Tags</a>
       <a class="nav-link" href="/question/newQuestionPage"> Ask</a>
     </ul>
@@ -105,7 +105,9 @@
         <!-- / votes -->
         <div class="-details">
           <h2>
-            <a href="/questiondetail/<%=question._id%>/<%=currentuser._id%>">
+            <a
+              href="/question/questiondetail/<%=question._id%>/<%=currentuser._id%>"
+            >
               <%= question.questiontitle %>
             </a>
           </h2>

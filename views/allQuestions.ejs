@@ -53,7 +53,7 @@
         </div>
       </a>
       <a href="" class="nav-link mx-auto pt-3 pl-4 text-white">
-        <img src="cmrlogo.png" width="100px" height="60px" />
+        <img src="/cmrlogo.png" width="100px" height="60px" />
       </a>
     </ul>
     <br />
@@ -76,7 +76,7 @@
     </div>
 
     <ul class="nav nav-pills nav-fill justify-content-between pt-4">
-      <a class="nav-link" href="/allquestions"> Questions</a>
+      <a class="nav-link" href="/question/allquestions"> Questions</a>
       <a class="nav-link" href="/tags"> Tags</a>
       <a class="nav-link" href="/question/newQuestionPage"> Ask</a>
     </ul>
@@ -108,7 +108,7 @@
         <!-- / votes -->
         <div class="-details">
           <h2>
-            <a href="/questiondetail/<%=question._id%>/<%=currentuser._id%>">
+            <a href="/question/questiondetail/<%=question._id%>/<%=currentuser._id%>">
               <%= question.questiontitle %>
             </a>
           </h2>

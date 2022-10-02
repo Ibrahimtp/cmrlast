@@ -9,5 +9,5 @@ const voteSchema = mongoose.Schema({
   }
 })
 
-
+ 
 module.exports = mongoose.model("votes", voteSchema)

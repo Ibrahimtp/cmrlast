@@ -4,7 +4,7 @@ const votes = require("./vote");
 const users = require("./user");
 const comments = require("./comment");
 
-
+ 
 const answerSchema = mongoose.Schema({
   questionanswered: {
     type: mongoose.Schema.Types.ObjectId, ref: "questions"

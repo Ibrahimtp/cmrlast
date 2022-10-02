@@ -6,7 +6,7 @@ const questions = require("../models/question");
 const answers = require("../models/answer");
 const comments = require("../models/comment");
 
-
+  
 router.get("/:answerid", async(req, res)=> {
   if (req.session.userid) {
     currentuser = await usersm.findOne({

@@ -6,7 +6,7 @@ const questions = require("../models/question");
 const answers = require("../models/answer");
 const votes = require("../models/vote");
 
-
+ 
 router.get("/upvote/question/:questionid/:voter", async(req, res)=> {
 
   if (req.session.userid) {
