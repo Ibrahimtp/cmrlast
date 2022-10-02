@@ -65,7 +65,7 @@
           <%= currentuser.displayname %>
         </a>
 
-        <a href="/modify" style="text-decoration-none"> Modify </a>
+        <a href="/question/modify" style="text-decoration-none"> Modify </a>
       </ul>
     </div>
 
@@ -85,7 +85,7 @@
       <div class="-summary">
         <div class="-votes answered-accepted">
           <div class="vote-block d-inline-block">
-            <a href="/modify/edit/<%=question._id%>"> Edit </a>
+            <a href="/question/modify/edit/<%=question._id%>"> Edit </a>
             <br />
             <br />
           </div>
@@ -93,7 +93,7 @@
             <span class="mini-counts" title="27"> </span>
 
             <a
-              href="/modify/delete/<%=question._id%>"
+              href="/question/modify/delete/<%=question._id%>"
               style="text-decoration-none;color:red"
               class="text-danger"
             >
