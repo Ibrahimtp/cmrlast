@@ -2,16 +2,15 @@ var express = require("express");
 var router = express.Router();
 const user = require("../models/user");
 const questions = require("../models/question");
+const QuestionController = require("../controllers/question");
 
 /* GET home page. */
 router.get("/", async function (req, res, next) {
   let allquestions = await questions
     .find({})
-    .sort("desc")
     .populate("tags")
     .populate("author")
-    .populate("votes")
-    .exec();
+    .populate("votes");
 
   currentuser = await user.findOne({
     email: req.session.userid,
