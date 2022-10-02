@@ -25,6 +25,6 @@ Router.get("/modify/edit/:qid", QuestionController.modificationEdit);
 Router.get("/modify/delete/:id", QuestionController.modificationDelete);
 
 //update
-Router.post("modify/update/:id", QuestionController.modificationUpdate);
+Router.post("/modify/update/:id", QuestionController.modificationUpdate);
 
 module.exports = Router;

@@ -78,9 +78,9 @@
     <br />
 
     <div class="">
-      <% for (question of allquestions) { %> <% countzza = 0 for (vote of
-      question.votes) { let g = JSON.stringify(vote) d = JSON.parse(g) hh =
-      JSON.stringify(d) ggg = JSON.parse(hh) countzza += ggg.votescount } %>
+      <% for (question of allquestions) { %> <% countzza = 0; for (vote of
+      question.votes) { let g = JSON.stringify(vote) ; d = JSON.parse(g) ; hh =
+      JSON.stringify(d) ; ggg = JSON.parse(hh) ; countzza += ggg.votescount } %>
 
       <div class="-summary">
         <div class="-votes answered-accepted">
@@ -112,8 +112,8 @@
             </a>
           </h2>
           <div class="-tags">
-            <% tags = question.tags.tagnames[0].split(" ") %> <% for (t of tags)
-            { %>
+            <% tags = question.tags.tagnames[0].split(" ") ; %> <% for (t of
+            tags) { %>
 
             <a href="/tags/<%=t%>" class="post-tag"><%= t %></a>
 
